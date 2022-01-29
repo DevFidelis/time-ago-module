@@ -1,5 +1,5 @@
 // function for time formatting...
-exports.timeAgo = function (data) {
+const timeAgo = (data) => {
     
     // find defference between given time and current time.
     const timeNow = Date.now();
@@ -56,7 +56,7 @@ exports.timeAgo = function (data) {
 
     } else if (weeks <= 4.3) {
         
-        if (weeks == 1 || $days == 7) {
+        if (weeks == 1 || days == 7) {
             return '1 week ago';
         } else {
             return weeks + ' weeks ago';
@@ -72,7 +72,7 @@ exports.timeAgo = function (data) {
 
     } else {
         
-        if (years == 1 || $months == 12) {
+        if (years == 1 || months == 12) {
             return '1 year ago';
         } else if (years == 10) {
             return '1 decade ago';
@@ -85,3 +85,5 @@ exports.timeAgo = function (data) {
     }
 
 }
+
+module.exports = timeAgo;
