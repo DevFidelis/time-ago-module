@@ -1,6 +1,6 @@
 {
   "name": "cc-time-ago",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "This is a simple NodeJs module that calculates the time elapsed by subtracting the time an entry was made from the current time. It has a good partten of displaying the time like \"Just Now\", \"1 Second ago\", \"2 minutes ago\", \"2 hours ago\" and so on.",
   "main": "index.js",
   "scripts": {
