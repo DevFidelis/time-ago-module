@@ -1,0 +1,30 @@
+{
+  "name": "time-ago",
+  "version": "1.0.0",
+  "description": "This is a simple NodeJs module that calculates the time elapsed by subtracting the time an entry was made from the current time. It has a good partten of displaying the time like \"Just Now\", \"1 Second ago\", \"2 minutes ago\", \"2 hours ago\" and so on.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DevFidelis/time-ago-module.git"
+  },
+  "keywords": [
+    "time",
+    "ago",
+    "time",
+    "time",
+    "formatting",
+    "time",
+    "module",
+    "time",
+    "function"
+  ],
+  "author": "Fidelis Fraze Musamba <devfidelisfraze@gmail.com> (https://github.com/DevFidelis)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DevFidelis/time-ago-module/issues"
+  },
+  "homepage": "https://github.com/DevFidelis/time-ago-module#readme"
+}
