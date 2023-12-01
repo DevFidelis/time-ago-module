@@ -1,9 +1,13 @@
-// function for time formatting...
-const timeAgo = (data) => {
-    
+// module for time formatting by TinnovAce...
+const languages = require('./languages');
+
+const timeAgo = (data, language = 'en') => {
     // find defference between given time and current time.
     const timeNow = Date.now();
     let difference = Math.round((timeNow / 1000) - (data / 1000));
+
+    // Choose the language strings
+    const langStrings = languages[language] || languages.en;
 
     // time difference conversion to seconds, minutes, hours, days, weeks, months and years.
     let seconds = difference;
@@ -14,76 +18,59 @@ const timeAgo = (data) => {
     let months = Math.round(difference / 2600640);
     let years = Math.round(difference / 31207680);
 
-    // check time mark and return appropriate message.
     if (seconds <= 60) {
-        
         if (seconds <= 1) {
-            return 'just now';
-        } else if (seconds == 60) {
-            return '1 minute ago';
+            return langStrings.justNow;
+        } else if (seconds === 60) {
+            return langStrings.minuteAgo;
         } else {
-            return seconds + ' seconds ago';
+            return seconds + ' ' + langStrings.minutesAgo;
         }
-
     } else if (minutes <= 60) {
-        
-        if (minutes == 1) {
-            return '1 minute ago';
-        } else if (minutes == 60) {
-            return '1 hour ago';
+        if (minutes === 1) {
+            return langStrings.minuteAgo;
+        } else if (minutes === 60) {
+            return langStrings.hourAgo;
         } else {
-            return minutes + ' minutes ago';
+            return minutes + ' ' + langStrings.minutesAgo;
         }
-
     } else if (hours <= 24) {
-        
-        if (hours == 1) {
-            return '1 hour ago';
-        } else if (hours == 24) {
-            return 'Yesterday';
+        if (hours === 1) {
+            return langStrings.hourAgo;
+        } else if (hours === 24) {
+            return langStrings.yesterday;
         } else {
-            return hours + ' hours ago';
+            return hours + ' ' + langStrings.hoursAgo;
         }
-        
-
     } else if (days < 7) {
-        
-        if (days == 1) {
-            return 'Yesterday';
+        if (days === 1) {
+            return langStrings.yesterday;
         } else {
-            return days + ' days ago';
+            return days + ' ' + langStrings.daysAgo;
         }
-
-    } else if (weeks <= 4.3) {
-        
-        if (weeks == 1 || days == 7) {
-            return '1 week ago';
+    } else if (weeks < 4.3) {
+        if (weeks === 1 || days === 7) {
+            return langStrings.weekAgo;
         } else {
-            return weeks + ' weeks ago';
+            return weeks + ' ' + langStrings.weeksAgo;
         }
-
     } else if (months < 12) {
-        
-        if (months == 1) {
-            return '1 month ago';
-        }  else {
-            return months + ' months ago';
+        if (months === 1) {
+            return langStrings.monthAgo;
+        } else {
+            return months + ' ' + langStrings.monthsAgo;
         }
-
     } else {
-        
-        if (years == 1 || months == 12) {
-            return '1 year ago';
-        } else if (years == 10) {
+        if (years === 1 || months === 12) {
+            return langStrings.yearAgo;
+        } else if (years === 10) {
             return '1 decade ago';
-        } else if (years == 100) {
+        } else if (years === 100) {
             return '1 century ago';
         } else {
-            return years + ' years ago';
+            return years + ' ' + langStrings.yearsAgo;
         }
-        
     }
-
-}
+};
 
 module.exports = timeAgo;
