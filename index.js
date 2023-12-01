@@ -24,7 +24,7 @@ const timeAgo = (data, language = 'en') => {
         } else if (seconds === 60) {
             return langStrings.minuteAgo;
         } else {
-            return seconds + ' ' + langStrings.minutesAgo;
+            return seconds + ' ' + langStrings.secondsAgo;
         }
     } else if (minutes <= 60) {
         if (minutes === 1) {
