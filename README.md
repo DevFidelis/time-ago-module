@@ -1,6 +1,6 @@
 # TinnovAce - Time Ago Module
 
-[![2.0.0](https://badge.fury.io/js/cc-time-ago.svg)](https://www.npmjs.com/package/cc-time-ago)
+[![npm version](https://badge.fury.io/js/cc-time-ago.svg)](https://www.npmjs.com/package/cc-time-ago)
 ![GitHub](https://img.shields.io/github/license/DevFidelis/time-ago-module)
 
 This is a simple module that calculates the time elapsed by subtracting the time an entry was made from the current time. It has a good pattern of displaying the time like "just now," "1 second ago," "2 minutes ago," "2 hours ago," "1 day ago," "2 weeks ago," "1 month ago," "2 years ago," and so on.
