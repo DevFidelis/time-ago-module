@@ -15,7 +15,8 @@ const languages = {
         monthAgo: '1 month ago',
         monthsAgo: 'months ago',
         yearAgo: '1 year ago',
-        yearsAgo: 'years ago'
+        yearsAgo: 'years ago',
+        justNowCompact: 'now'
     },
     es: {
         justNow: 'justo ahora',
@@ -31,7 +32,8 @@ const languages = {
         monthAgo: 'hace 1 mes',
         monthsAgo: 'hace meses',
         yearAgo: 'hace 1 año',
-        yearsAgo: 'hace años'
+        yearsAgo: 'hace años',
+        justNowCompact: 'ahora'
     },
     fr: {
         justNow: 'juste maintenant',
@@ -47,7 +49,8 @@ const languages = {
         monthAgo: 'il y a 1 mois',
         monthsAgo: 'il y a quelques mois',
         yearAgo: 'il y a 1 an',
-        yearsAgo: 'il y a quelques années'
+        yearsAgo: 'il y a quelques années',
+        justNowCompact: 'mtn'
     },
     de: {
         justNow: 'gerade eben',
@@ -63,7 +66,8 @@ const languages = {
         monthAgo: 'vor 1 Monat',
         monthsAgo: 'vor einigen Monaten',
         yearAgo: 'vor 1 Jahr',
-        yearsAgo: 'vor einigen Jahren'
+        yearsAgo: 'vor einigen Jahren',
+        justNowCompact: 'jetzt'
     },
     it: {
         justNow: 'proprio ora',
@@ -79,7 +83,8 @@ const languages = {
         monthAgo: '1 mese fa',
         monthsAgo: 'alcuni mesi fa',
         yearAgo: '1 anno fa',
-        yearsAgo: 'alcuni anni fa'
+        yearsAgo: 'alcuni anni fa',
+        justNowCompact: 'ora'
     },
     ja: {
         justNow: 'たった今',
@@ -95,7 +100,8 @@ const languages = {
         monthAgo: '1 か月前',
         monthsAgo: '数か月前',
         yearAgo: '1 年前',
-        yearsAgo: '数年前'
+        yearsAgo: '数年前',
+        justNowCompact: '今'
     },
     zh: {
         justNow: '刚刚',
@@ -111,7 +117,8 @@ const languages = {
         monthAgo: '1 个月前',
         monthsAgo: '几个月前',
         yearAgo: '1 年前',
-        yearsAgo: '几年前'
+        yearsAgo: '几年前',
+        justNowCompact: '现在'
     },
     ru: {
         justNow: 'только что',
@@ -127,7 +134,8 @@ const languages = {
         monthAgo: '1 месяц назад',
         monthsAgo: 'несколько месяцев назад',
         yearAgo: '1 год назад',
-        yearsAgo: 'несколько лет назад'
+        yearsAgo: 'несколько лет назад',
+        justNowCompact: 'сейчас'
     },
     pt: {
         justNow: 'agora mesmo',
@@ -143,7 +151,8 @@ const languages = {
         monthAgo: 'há 1 mês',
         monthsAgo: 'meses atrás',
         yearAgo: 'há 1 ano',
-        yearsAgo: 'anos atrás'
+        yearsAgo: 'anos atrás',
+        justNowCompact: 'agora'
     },
     ar: {
         justNow: 'الآن',
@@ -159,7 +168,8 @@ const languages = {
         monthAgo: 'قبل شهر واحد',
         monthsAgo: 'منذ أشهر',
         yearAgo: 'قبل عام واحد',
-        yearsAgo: 'منذ أعوام'
+        yearsAgo: 'منذ أعوام',
+        justNowCompact: 'الآن'
     },
     hi: {
         justNow: 'अभी',
@@ -175,7 +185,8 @@ const languages = {
         monthAgo: '1 महीने पहले',
         monthsAgo: 'कुछ महीने पहले',
         yearAgo: '1 साल पहले',
-        yearsAgo: 'कुछ साल पहले'
+        yearsAgo: 'कुछ साल पहले',
+        justNowCompact: 'अभी'
     },
     tr: {
         justNow: 'şimdi',
@@ -191,7 +202,8 @@ const languages = {
         monthAgo: '1 ay önce',
         monthsAgo: 'birkaç ay önce',
         yearAgo: '1 yıl önce',
-        yearsAgo: 'birkaç yıl önce'
+        yearsAgo: 'birkaç yıl önce',
+        justNowCompact: 'şimdi'
     },
     nl: {
         justNow: 'zojuist',
@@ -207,7 +219,8 @@ const languages = {
         monthAgo: '1 maand geleden',
         monthsAgo: 'enkele maanden geleden',
         yearAgo: '1 jaar geleden',
-        yearsAgo: 'enkele jaren geleden'
+        yearsAgo: 'enkele jaren geleden',
+        justNowCompact: 'nu'
     }
 };
 

@@ -5,6 +5,8 @@
 
 This is a simple module that calculates the time elapsed by subtracting the time an entry was made from the current time. It has a good pattern of displaying the time like "just now," "1 second ago," "2 minutes ago," "2 hours ago," "1 day ago," "2 weeks ago," "1 month ago," "2 years ago," and so on.
 
+You can also use the compact mode if you want something concise and compact. i.e "1d" instead of "1 day ago" or "1h" instead of "1 hour ago." Check the [Compact Mode](#compact-mode) section for more information.
+
 The module now supports multiple languages for time formatting. You can specify the language you want to use when formatting the time. Check the [Languages Supported](#languages-supported) section for more information.
 
 The module can be useful and integrated into various applications for time formatting, such as in blog posts, comments, user posts, social networks, or literally any app that uses time. The module is constantly being updated and is open source, easy to use, flexible, and scalable.
@@ -30,6 +32,15 @@ const entryTime = /* your entry time in milliseconds */;
 const formattedTime = timeAgo(entryTime, 'es'); // Pass the language code as the second argument
 console.log(formattedTime);
 ```
+## Compact Mode
+
+You can also use the compact mode to get a more concise output:
+
+```bash
+const compactFormattedTime = timeAgo(entryTime, null, true);
+console.log(compactFormattedTime); // Output might be "1h"
+```
+
 ## Languages Supported
 
 The module supports the following languages for time formatting:
@@ -48,7 +59,7 @@ The module supports the following languages for time formatting:
 - Turkish (tr)
 - Dutch (nl)
 
-You can customize the language by passing the language code as the second argument when using the module. Otherwise English will be used as the default language.
+You can customize the language by passing the language code as the second argument when using the module. Otherwise it will attempt to detect the user's language automatically and if it fails English will be used as the default language.
 
 ## Suggesting New Languages
 
@@ -59,6 +70,7 @@ We value your feedback and encourage you to suggest additional languages for tim
 Feel free to contribute to the module. Your pull requests will be reviewed and approved. For any problems encountered or further queries, please [raise an issue](https://github.com/DevFidelis/time-ago-module/issues).
 
 ## License
+
 This project is licensed under the MIT License - see the [LICENSE](https://github.com/DevFidelis/time-ago-module/blob/master/LICENSE) file for details.
 
-**Time Ago Module © 2022 - 2023, a product of TinnovAce.**
+**Time Ago Module © 2022 - 2024, a product of TinnovAce.**

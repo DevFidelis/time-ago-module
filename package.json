@@ -1,6 +1,6 @@
 {
   "name": "cc-time-ago",
-  "version": "2.0.3",
+  "version": "2.1.0",
   "description": "This is a simple module that calculates the time elapsed and has a good partten of displaying the time like \"Just Now\", \"1 Second ago\", \"2 minutes ago\", \"2 hours ago\" and so on.",
   "main": "index.js",
   "scripts": {
