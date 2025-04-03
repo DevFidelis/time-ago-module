@@ -1,76 +1,185 @@
-# TinnovAce - Time Ago Module
+# TinnovAce Time Ago Module
 
 [![npm version](https://badge.fury.io/js/cc-time-ago.svg)](https://www.npmjs.com/package/cc-time-ago)
+
 ![GitHub](https://img.shields.io/github/license/DevFidelis/time-ago-module)
 
-This is a simple module that calculates the time elapsed by subtracting the time an entry was made from the current time. It has a good pattern of displaying the time like "just now," "1 second ago," "2 minutes ago," "2 hours ago," "1 day ago," "2 weeks ago," "1 month ago," "2 years ago," and so on.
+[![TypeScript](https://img.shields.io/badge/%3C%2F%3E-TypeScript-blue)](https://www.typescriptlang.org)
 
-You can also use the compact mode if you want something concise and compact. i.e "1d" instead of "1 day ago" or "1h" instead of "1 hour ago." Check the [Compact Mode](#compact-mode) section for more information.
+A lightweight time formatter with i18n support, future dates, real-time updates, and TypeScript types. Formats dates as "just now", "1h ago", or "in 5 minutes".
 
-The module now supports multiple languages for time formatting. You can specify the language you want to use when formatting the time. Check the [Languages Supported](#languages-supported) section for more information.
+## Features
 
-The module can be useful and integrated into various applications for time formatting, such as in blog posts, comments, user posts, social networks, or literally any app that uses time. The module is constantly being updated and is open source, easy to use, flexible, and scalable.
+- 🌍 **14 Built-in Languages** + Custom Language Support
+
+- ⏳ **Future Date Formatting** ("in 5 minutes")
+
+- ⚡ **Real-Time Auto Updates** (Perfect for UIs)
+
+- 🔧 **Customizable Thresholds** (Control when units change)
+
+- 📦 **TypeScript Ready** with Full Type Definitions
+
+- 🚀 **Compact Mode** ("1h" instead of "1 hour ago")
+
+- 🧠 **Smart Caching** for High Performance
 
 ## Installation
 
-To use the module in your project, install it via npm:
-
 ```bash
+
 npm install cc-time-ago
-```
-## Usage
 
-Include the module in your project using the import syntax:
-
-```bash
-const timeAgo = require('cc-time-ago');
-```
-The **time-ago** module has one method, which accepts the time an entry was made in milliseconds as the first argument and an optional second argument for specifying the language. We advise you to use the JavaScript time object with the method **now()** (e.g., **Date.now()**).
-
-```bash
-const entryTime = /* your entry time in milliseconds */;
-const formattedTime = timeAgo(entryTime, 'es'); // Pass the language code as the second argument
-console.log(formattedTime);
-```
-## Compact Mode
-
-You can also use the compact mode to get a more concise output:
-
-```bash
-const compactFormattedTime = timeAgo(entryTime, null, true);
-console.log(compactFormattedTime); // Output might be "1h"
 ```
 
-## Languages Supported
+## Basic Usage
 
-The module supports the following languages for time formatting:
+```javascript
 
-- English (en)
-- Spanish (es)
-- French (fr)
-- German (de)
-- Italian (it)
-- Japanese (ja)
-- Chinese (zh)
-- Russian (ru)
-- Portuguese (pt)
-- Arabic (ar)
-- Hindi (hi)
-- Turkish (tr)
-- Dutch (nl)
+const { timeAgo } = require('cc-time-ago');
 
-You can customize the language by passing the language code as the second argument when using the module. Otherwise it will attempt to detect the user's language automatically and if it fails English will be used as the default language.
+// Basic usage
 
-## Suggesting New Languages
+console.log(timeAgo(Date.now() - 300000)); // "5 minutes ago"
 
-We value your feedback and encourage you to suggest additional languages for time formatting. If there's a language you'd like to see supported, please [open an issue](https://github.com/DevFidelis/time-ago-module/issues) in the repository, and we'll do our best to add it in future updates. Your input is essential in making this module more inclusive and versatile.
+// With options
 
-## Contribution
+console.log(timeAgo(Date.now() + 3600000, { 
 
-Feel free to contribute to the module. Your pull requests will be reviewed and approved. For any problems encountered or further queries, please [raise an issue](https://github.com/DevFidelis/time-ago-module/issues).
+  language: 'es',
+
+  allowFuture: true
+
+})); // "en 1 hora"
+
+```
+
+## Advanced Usage
+
+### Custom Thresholds
+
+```javascript
+
+timeAgo(date, {
+
+  thresholds: {
+
+    seconds: 120,  // Show seconds up to 2 minutes
+
+    minutes: 3600  // Show minutes up to 1 hour
+
+  }
+
+});
+
+```
+
+### Real-Time Updates (React/Vue/etc)
+
+```javascript
+
+const { autoUpdate } = require('cc-time-ago');
+
+const { stop } = autoUpdate(someDate, (formattedTime) => {
+
+  console.log(formattedTime); // Updates every 30s
+
+});
+
+// Call stop() when done
+
+```
+
+### Add Custom Languages
+
+```javascript
+
+const { addLanguage } = require('cc-time-ago');
+
+addLanguage('ko', {
+
+  justNow: '방금',
+
+  minuteAgo: '1분 전',
+
+  // ...
+
+});
+
+```
+
+## Options
+
+| Parameter    | Type     | Default               | Description                          |
+
+|--------------|----------|-----------------------|--------------------------------------|
+
+| `language`   | string   | Auto-detected         | Language code (e.g., 'es', 'fr')     |
+
+| `compact`    | boolean  | false                 | Compact format ("1h" vs "1 hour ago")|
+
+| `allowFuture`| boolean  | false                 | Format future dates ("in 5 minutes") |
+
+| `thresholds` | object   | [See below](#default-thresholds) | Custom unit thresholds |
+
+### Default Thresholds
+
+```javascript
+
+{
+
+  seconds: 60,     // Show seconds until 1 minute
+
+  minutes: 3600,   // Show minutes until 1 hour
+
+  hours: 86400,    // Show hours until 1 day
+
+  days: 604800,    // Show days until 1 week
+
+  weeks: 2600640,  // Show weeks until ~1 month
+
+  months: 31207680 // Show months until 1 year
+
+}
+
+```
+
+## Supported Languages
+
+| Code | Language   | Code | Language  |
+
+|------|------------|------|-----------|
+
+| `en` | English    | `nl` | Dutch     |
+
+| `es` | Spanish    | `ja` | Japanese  |
+
+| `fr` | French     | `zh` | Chinese   |
+
+| `de` | German     | `ru` | Russian   |
+
+| `it` | Italian    | `pt` | Portuguese|
+
+| `ar` | Arabic     | `hi` | Hindi     |
+
+| `tr` | Turkish    |      |           |
+
+**Missing a language?**  
+
+[Add it yourself](#contributing) or [request it](https://github.com/DevFidelis/time-ago-module/issues)!
+
+## Contributing
+
+1\. Fork the repository
+
+2\. Add/Update languages in `languages.js`
+
+3\. Write tests for new features
+
+4\. Submit a PR
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](https://github.com/DevFidelis/time-ago-module/blob/master/LICENSE) file for details.
 
-**Time Ago Module © 2022 - 2024, a product of TinnovAce.**
+**Time Ago Module © 2022 - 2025, a product of [TinnovAce](https://tinnovace.tech).**

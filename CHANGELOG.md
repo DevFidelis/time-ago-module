@@ -1,38 +1,76 @@
-# Change Log
+# Changelog
 
-All notable changes to this project will be documented in this file.
-
-## [Unreleased]
+## [3.0.0] - 2025-04-03
 
 ### Added
 
-- Support for multiple languages in time formatting.
-  - See [Languages Supported](#languages-supported) section in the README for details.
-- Compact mode for shorter time representations.
-  - See [Compact Mode](#compact-mode) section for in the README for details.
-- Automatic language detection based on user preferences or browser settings.
-  - Enhances user experience by adapting time formats dynamically.
+- **Future Date Support**: Format dates in the future ("in 5 minutes")
+
+- **Threshold Customization**: Control when time units switch (seconds→minutes→etc)
+
+- **Real-Time Auto Updates**: `autoUpdate()` for live-refreshing UIs
+
+- **TypeScript Support**: Full type definitions (`index.d.ts`)
+
+- **Runtime Language Addition**: `addLanguage()` method
+
+- **Improved i18n**: Use `Intl.RelativeTimeFormat` where available
+
+- **Memoization Cache**: 60s TTL for performance
 
 ### Changed
 
-- Updated README with more detailed usage examples and information about automatic language detection and compact mode.
+- **Breaking**: API now uses options object instead of positional args
 
-## [2.0.0] - 2023-12-01
+  ```javascript
 
-### Added
+  // Old
 
-- Multi-language support for time formatting.
-  - Users can now specify the language for time display.
-  - Added translations for English, Spanish, French, German, Italian, Japanese, Chinese, Russian, Portuguese, Arabic, Hindi, Turkish, and Dutch.
-- Compact mode for shorter time representations.
+  timeAgo(date, 'es', true);
 
-### Changed
+  // New
 
-- Updated the README with information about multi-language support, compact mode, and automatic language detection.
+  timeAgo(date, { language: 'es', compact: true });
+
+  ```
+
+- **Language Detection**: More robust browser/Node.js environment checks
+
+- **Documentation**: Complete rewrite with interactive examples
 
 ### Fixed
 
-- Fixed a few minor bugs.
+- Proper pluralization for all languages
 
-[Unreleased]: https://github.com/DevFidelis/time-ago-module/compare/v2.0.0...HEAD
-[2.0.0]: https://github.com/DevFidelis/time-ago-module/releases/tag/v2.0.0
+- RTL support for Arabic
+
+- Timezone handling in Node.js
+
+## [2.1.0] - 2024-07-13
+
+- Initial public release
+
+- Basic time formatting
+
+- 14 language support
+
+- Compact mode
+
+[Unreleased]: https://github.com/DevFidelis/time-ago-module/compare/v3.0.0...HEAD
+
+[3.0.0]: https://github.com/DevFidelis/time-ago-module/releases/tag/v3.0.0
+
+[2.1.0]: https://github.com/DevFidelis/time-ago-module/releases/tag/v2.1.0
+
+
+### **Key Documentation Updates**
+
+1\. **Modernized README**: Interactive code samples, feature highlights, and options table
+
+2\. **Clear Migration Guide**: Breaking changes highlighted in CHANGELOG
+
+3\. **TypeScript Support**: Added badge and usage notes
+
+4\. **Real-World Examples**: React/Vue auto-update snippet
+
+5\. **Contributor Focus**: Simplified language addition process

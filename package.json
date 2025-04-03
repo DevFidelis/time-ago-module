@@ -1,10 +1,12 @@
 {
   "name": "cc-time-ago",
-  "version": "2.1.0",
-  "description": "This is a simple module that calculates the time elapsed and has a good partten of displaying the time like \"Just Now\", \"1 Second ago\", \"2 minutes ago\", \"2 hours ago\" and so on.",
+  "version": "3.0.0",
+  "description": "A lightweight time-ago formatter with i18n support, future dates, and real-time updates",
   "main": "index.js",
+  "types": "index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "lint": "eslint ."
   },
   "repository": {
     "type": "git",
@@ -13,14 +15,22 @@
   "keywords": [
     "time",
     "time ago",
-    "time formatting",
-    "time module",
-    "time function"
+    "i18n",
+    "date formatting",
+    "relative time"
   ],
   "author": "Fidelis Musamba <devfidelisfraze@gmail.com> (https://github.com/DevFidelis)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/DevFidelis/time-ago-module/issues"
   },
-  "homepage": "https://github.com/DevFidelis/time-ago-module#readme"
+  "homepage": "https://github.com/DevFidelis/time-ago-module#readme",
+  "devDependencies": {
+    "@types/jest": "^29.5.0",
+    "eslint": "^8.45.0",
+    "jest": "^29.5.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
 }
