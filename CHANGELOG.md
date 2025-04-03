@@ -22,17 +22,13 @@
 
 - **Breaking**: API now uses options object instead of positional args
 
-  ```javascript
-
+```bash
   // Old
-
   timeAgo(date, 'es', true);
 
   // New
-
   timeAgo(date, { language: 'es', compact: true });
-
-  ```
+```
 
 - **Language Detection**: More robust browser/Node.js environment checks
 
