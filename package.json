@@ -1,6 +1,6 @@
 {
   "name": "cc-time-ago",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "A lightweight time-ago formatter with i18n support, future dates, and real-time updates",
   "main": "index.js",
   "types": "index.d.ts",

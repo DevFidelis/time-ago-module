@@ -1,4 +1,4 @@
-# TinnovAce Time Ago Module
+# TinnovAce Time Module
 
 [![npm version](https://badge.fury.io/js/cc-time-ago.svg)](https://www.npmjs.com/package/cc-time-ago)
 ![GitHub](https://img.shields.io/github/license/DevFidelis/time-ago-module)
@@ -135,4 +135,4 @@ addLanguage('ko', {
 
 This project is licensed under the MIT License - see the [LICENSE](https://github.com/DevFidelis/time-ago-module/blob/master/LICENSE) file for details.
 
-**Time Ago Module © 2022 - 2025, a product of [TinnovAce](https://tinnovace.tech).**
+**Time Module © 2022 - 2025, a product of [TinnovAce](https://tinnovace.tech).**
