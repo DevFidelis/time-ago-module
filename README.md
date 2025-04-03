@@ -18,13 +18,13 @@ A lightweight time formatter with i18n support, future dates, real-time updates,
 
 ## Installation
 
-```bash
+```console
 npm install cc-time-ago
 ```
 
 ## Basic Usage
 
-```bash
+```js
 const { timeAgo } = require('cc-time-ago');
 
 // Basic usage
@@ -41,7 +41,7 @@ console.log(timeAgo(Date.now() + 3600000, { 
 
 ### Custom Thresholds
 
-```bash
+```js
 timeAgo(date, {
   thresholds: {
     seconds: 120,  // Show seconds up to 2 minutes
@@ -52,7 +52,7 @@ timeAgo(date, {
 
 ### Real-Time Updates (React/Vue/etc)
 
-```bash
+```js
 const { autoUpdate } = require('cc-time-ago');
 
 const { stop } = autoUpdate(someDate, (formattedTime) => {
@@ -64,7 +64,7 @@ const { stop } = autoUpdate(someDate, (formattedTime) => {
 
 ### Add Custom Languages
 
-```bash
+```js
 const { addLanguage } = require('cc-time-ago');
 
 addLanguage('ko', {
@@ -90,7 +90,7 @@ addLanguage('ko', {
 
 ### Default Thresholds
 
-```bash
+```js
 {
   seconds: 60,     // Show seconds until 1 minute
   minutes: 3600,   // Show minutes until 1 hour
